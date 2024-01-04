@@ -23,11 +23,15 @@ FApplicant UApplicantGenerator::GenerateApplicant()
         else
             applicant.Passion = RANDOM_REG_PASSION(); 
 
-        // On the 1/2 chance of a swan applicant having sus prior job experience
-        if ((FMath::RandRange(1, 2)) == 1)
-            applicant.PriorJob = RANDOM_SUS_PRIOR_JOB(); 
-        else
-            applicant.PriorJob = RANDOM_REG_PRIOR_JOB(); 
+        // for each prior job the applicant should have
+        for (int i = 0; i < 3; i++)
+        {
+            // On the 1/2 chance of a swan applicant having sus prior job experience
+            if ((FMath::RandRange(1, 2)) == 1)
+                applicant.PriorJob[i] = RANDOM_SUS_PRIOR_JOB();
+            else
+                applicant.PriorJob[i] = RANDOM_REG_PRIOR_JOB();
+        }
 
         // On the 1/2 chance of a swan applicant having sus reason to fit
         if ((FMath::RandRange(1, 2)) == 1)
@@ -35,11 +39,15 @@ FApplicant UApplicantGenerator::GenerateApplicant()
         else
             applicant.ReasonForFittingIn = RANDOM_REG_REASON_TO_FIT(); 
 
-        // On the 1/2 chance of a swan applicant having a sus skill
-        if ((FMath::RandRange(1, 2)) == 1)
-            applicant.Skill = RANDOM_SUS_SKILL(); 
-        else
-            applicant.Skill = RANDOM_REG_SKILL(); 
+        // For each skill that the applicant should have
+        for (int i = 0; i < 5; i++)
+        {
+            // On the 1/2 chance of a swan applicant having a sus skill
+            if ((FMath::RandRange(1, 2)) == 1)
+                applicant.Skill[i] = RANDOM_SUS_SKILL();
+            else
+                applicant.Skill[i] = RANDOM_REG_SKILL();
+        }
 
         return applicant; 
     }
@@ -52,11 +60,16 @@ FApplicant UApplicantGenerator::GenerateApplicant()
     else
         applicant.Passion = RANDOM_REG_PASSION(); 
 
-    // On the 1/4 chance of a non-swan applicant having a sus prior job
-    if ((FMath::RandRange(1, 4)) == 1)
-        applicant.PriorJob = RANDOM_SUS_PRIOR_JOB(); 
-    else
-        applicant.PriorJob = RANDOM_REG_PRIOR_JOB(); 
+    // for each of the prior work experience the applicant should have
+    for (int i = 0; i < 3; i++)
+    {
+        // On the 1/4 chance of a non-swan applicant having a sus prior job
+        if ((FMath::RandRange(1, 4)) == 1)
+            applicant.PriorJob[i] = RANDOM_SUS_PRIOR_JOB();
+        else
+            applicant.PriorJob[i] = RANDOM_REG_PRIOR_JOB();
+    }
+
 
     // On the 1/4 chance of a non-swan applicant having a sus reason to fit
     if ((FMath::RandRange(1, 4)) == 1)
@@ -64,11 +77,15 @@ FApplicant UApplicantGenerator::GenerateApplicant()
     else
         applicant.ReasonForFittingIn = RANDOM_REG_REASON_TO_FIT();
 
-    // On the 1/4 chance of a non-swan applicant having a sus skill
-    if ((FMath::RandRange(1, 4)) == 1)
-        applicant.Skill = RANDOM_SUS_SKILL(); 
-    else
-        applicant.Skill = RANDOM_REG_SKILL(); 
+    // For each skill the applicant should have
+    for (int i = 0; i < 5; i++)
+    {
+        // On the 1/4 chance of a non-swan applicant having a sus skill
+        if ((FMath::RandRange(1, 4)) == 1)
+            applicant.Skill[i] = RANDOM_SUS_SKILL();
+        else
+            applicant.Skill[i] = RANDOM_REG_SKILL();
+    }
 
     return applicant;  
 }

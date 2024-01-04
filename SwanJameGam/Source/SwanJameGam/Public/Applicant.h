@@ -29,11 +29,11 @@ struct FApplicant
 
 	// The applicant's previous work experience
 	UPROPERTY()
-		FText PriorJob; 
+		FText PriorJob[3]; 
 
 	// One of the applicant's skills
 	UPROPERTY()
-		FText Skill;
+		FText Skill[5];
 	
 	// The reason the applicant states for fitting in with the company
 	UPROPERTY()
