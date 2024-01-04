@@ -18,6 +18,10 @@ USTRUCT(BlueprintType)
 struct FApplicant
 {
 	GENERATED_BODY()
+
+	// Whether the applicant is actually a swan
+	UPROPERTY()
+		bool bIsSwan; 
 	
 	// The applicant's name
 	UPROPERTY()
