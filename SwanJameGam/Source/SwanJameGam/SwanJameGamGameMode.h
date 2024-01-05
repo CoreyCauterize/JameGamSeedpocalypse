@@ -13,6 +13,12 @@ class ASwanJameGamGameMode : public AGameModeBase
 
 public:
 	ASwanJameGamGameMode();
+
+	virtual void BeginPlay();
+
+	TSubclassOf<class UUserWidget> MenuClass;
+
+	class UMainMenu* MainMenu;
 };
 
 
