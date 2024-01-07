@@ -2,6 +2,8 @@
 
 
 #include "AI/NPC_Applicant.h"
+#include "SwanGameInstance.h"
+#include "ApplicantGenerator.h"
 
 // Sets default values
 ANPC_Applicant::ANPC_Applicant()
@@ -22,7 +24,7 @@ void ANPC_Applicant::BeginPlay()
 void ANPC_Applicant::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	ApplicantData = APPLICANT_GENERATOR->GenerateApplicant();
 }
 
 // Called to bind functionality to input
@@ -30,5 +32,15 @@ void ANPC_Applicant::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+}
+
+FApplicant ANPC_Applicant::GetApplicantData()
+{
+	return ApplicantData;
+}
+
+bool ANPC_Applicant::GetIsSwan()
+{
+	return ApplicantData.bIsSwan;
 }
 

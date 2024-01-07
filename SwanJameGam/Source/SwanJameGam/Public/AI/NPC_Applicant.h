@@ -4,7 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Applicant.h"
 #include "NPC_Applicant.generated.h"
+
 
 UCLASS()
 class SWANJAMEGAM_API ANPC_Applicant : public ACharacter
@@ -19,6 +21,9 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	// The applicant's data
+	FApplicant ApplicantData;
+	
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -26,4 +31,10 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	UFUNCTION(BlueprintCallable, Category="Applicant")
+		FApplicant GetApplicantData();
+
+	UFUNCTION(BlueprintCallable, Category="Applicant")
+	bool GetIsSwan();
+	
 };
