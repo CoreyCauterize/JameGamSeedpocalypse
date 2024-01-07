@@ -6,6 +6,9 @@
 #include "GameFramework/HUD.h"
 #include "SwanHireHUD.generated.h"
 
+
+
+
 /**
  * 
  */
@@ -21,4 +24,8 @@ class SWANJAMEGAM_API ASwanHireHUD : public AHUD
 
 	void BeginPlay() override;
 
+
+
+
 };
+

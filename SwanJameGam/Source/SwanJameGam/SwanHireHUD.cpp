@@ -5,6 +5,12 @@
 #include "Blueprint/UserWidget.h"
 #include "Components/TextBlock.h"
 #include "UObject/ConstructorHelpers.h"
+#include "Components/RichTextBlock.h"
+#include "Blueprint/UserWidget.h"
+
+
+
+
 
 ASwanHireHUD::ASwanHireHUD()
 {
