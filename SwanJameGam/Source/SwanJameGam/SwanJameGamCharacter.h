@@ -39,6 +39,9 @@ class ASwanJameGamCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
 	class UInputAction* MoveAction;
 
+	/** Test Input Action **/
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
+	class UInputAction* TestAction; 
 	
 public:
 	ASwanJameGamCharacter();
@@ -70,6 +73,9 @@ protected:
 
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
+
+	/** Called for testing */
+	void Test();
 
 protected:
 	// APawn interface
