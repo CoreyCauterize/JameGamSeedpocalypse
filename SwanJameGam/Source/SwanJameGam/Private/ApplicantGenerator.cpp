@@ -7,7 +7,8 @@ UApplicantGenerator::UApplicantGenerator()
 FApplicant UApplicantGenerator::GenerateApplicant()
 {
     FApplicant applicant;
-
+    applicant.PriorJob.Reserve(3);
+    applicant.Skill.Reserve(5);
     // Setting random elements of applicants not based on whether an applicant is a swan
     applicant.FavoriteVerb = RANDOM_FAVORITE_VERB();
     applicant.Name = RANDOM_NAME(); 
@@ -28,9 +29,9 @@ FApplicant UApplicantGenerator::GenerateApplicant()
         {
             // On the 1/2 chance of a swan applicant having sus prior job experience
             if ((FMath::RandRange(1, 2)) == 1)
-                applicant.PriorJob[i] = RANDOM_SUS_PRIOR_JOB();
+                applicant.PriorJob.Add( RANDOM_SUS_PRIOR_JOB());
             else
-                applicant.PriorJob[i] = RANDOM_REG_PRIOR_JOB();
+                applicant.PriorJob.Add(RANDOM_REG_PRIOR_JOB());
         }
 
         // On the 1/2 chance of a swan applicant having sus reason to fit
@@ -44,9 +45,9 @@ FApplicant UApplicantGenerator::GenerateApplicant()
         {
             // On the 1/2 chance of a swan applicant having a sus skill
             if ((FMath::RandRange(1, 2)) == 1)
-                applicant.Skill[i] = RANDOM_SUS_SKILL();
+                applicant.Skill.Add(RANDOM_SUS_SKILL());
             else
-                applicant.Skill[i] = RANDOM_REG_SKILL();
+                applicant.Skill.Add(RANDOM_REG_SKILL());
         }
 
         return applicant; 
@@ -65,9 +66,9 @@ FApplicant UApplicantGenerator::GenerateApplicant()
     {
         // On the 1/4 chance of a non-swan applicant having a sus prior job
         if ((FMath::RandRange(1, 4)) == 1)
-            applicant.PriorJob[i] = RANDOM_SUS_PRIOR_JOB();
+            applicant.PriorJob.Add(RANDOM_SUS_PRIOR_JOB());
         else
-            applicant.PriorJob[i] = RANDOM_REG_PRIOR_JOB();
+            applicant.PriorJob.Add(RANDOM_REG_PRIOR_JOB());
     }
 
 
@@ -82,9 +83,9 @@ FApplicant UApplicantGenerator::GenerateApplicant()
     {
         // On the 1/4 chance of a non-swan applicant having a sus skill
         if ((FMath::RandRange(1, 4)) == 1)
-            applicant.Skill[i] = RANDOM_SUS_SKILL();
+            applicant.Skill.Add(RANDOM_SUS_SKILL());
         else
-            applicant.Skill[i] = RANDOM_REG_SKILL();
+            applicant.Skill.Add(RANDOM_REG_SKILL());
     }
 
     return applicant;  
