@@ -24,9 +24,26 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "SwanJameGamState")
 		void VaccumSwan(FApplicant applicant);
 
+	UFUNCTION(BlueprintCallable, Category = "SwanJameGamState")
+		void SetCanTakeAction(bool bCanTakeAction) { m_bCanTakeAction = bCanTakeAction; }
+
+	UFUNCTION(BlueprintCallable, Category = "SwanJameGamState")
+		bool GetCanTakeAction() { return m_bCanTakeAction; }
+
+	UFUNCTION(BlueprintCallable, Category = "SwanJameGamState")
+		uint8 GetHiredWorkers() { return m_HiredWorkers; }
+
+	UFUNCTION(BlueprintCallable, Category = "SwanJameGamState")
+		void Win();
+
+	UFUNCTION(BlueprintCallable, Category = "SwanJameGamState")
+		void Lose();
+
 private:
 
 	uint8 m_HiredWorkers;
+
+	bool m_bCanTakeAction;
 
 
 	
