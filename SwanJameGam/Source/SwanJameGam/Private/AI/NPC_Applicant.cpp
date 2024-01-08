@@ -17,14 +17,14 @@ ANPC_Applicant::ANPC_Applicant()
 void ANPC_Applicant::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	ApplicantData = APPLICANT_GENERATOR->GenerateApplicant();
+
 }
 
 // Called every frame
 void ANPC_Applicant::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	ApplicantData = APPLICANT_GENERATOR->GenerateApplicant();
 }
 
 // Called to bind functionality to input
