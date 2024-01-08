@@ -1,4 +1,4 @@
-/*	@2024 Derek Fallows®
+/*	@2024 Derek Fallowsï¿½
 	All versions of this code may not be reused or replicated in any capacity without the express permission of their creators. 
 	Primary Coder for this file: Derek Fallows
 
@@ -20,30 +20,30 @@ struct FApplicant
 	GENERATED_BODY()
 
 	// Whether the applicant is actually a swan
-	UPROPERTY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Applicant")
 		bool bIsSwan; 
 	
 	// The applicant's name
-	UPROPERTY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Applicant")
 		FText Name; 
 
 	// The applicant's previous work experience
-	UPROPERTY()
-		FText PriorJob[3]; 
+	UPROPERTY(BlueprintReadWrite, Category="Applicant")
+		TArray<FText> PriorJob; 
 
 	// One of the applicant's skills
-	UPROPERTY()
-		FText Skill[5];
+	UPROPERTY(BlueprintReadWrite, Category="Applicant" )
+		TArray<FText> Skill;
 	
 	// The reason the applicant states for fitting in with the company
-	UPROPERTY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Applicant")
 		FText ReasonForFittingIn; 
 
 	// The applicant's passion outside of work
-	UPROPERTY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Applicant")
 		FText Passion; 
 
 	// A verb the applicant uses in the application
-	UPROPERTY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Applicant")
 		FText FavoriteVerb; 
 };

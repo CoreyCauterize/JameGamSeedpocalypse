@@ -1,4 +1,4 @@
-/*	@2024 Derek Fallows®
+/*	@2024 Derek FallowsÂ®
 	All versions of this code may not be reused or replicated in any capacity without the express permission of their creators.
 	Primary Coder for this file: Derek Fallows
 
