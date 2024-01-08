@@ -39,6 +39,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "SwanJameGamState")
 		void Lose();
 
+	UFUNCTION(BlueprintCallable, Category = "SwanJameGamState")
+		void Reset();
+
 private:
 
 	uint8 m_HiredWorkers;

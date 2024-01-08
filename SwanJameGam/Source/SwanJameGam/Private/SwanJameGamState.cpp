@@ -44,3 +44,9 @@ void ASwanJameGamState::Lose()
 {
 	UKismetSystemLibrary::QuitGame(GetWorld(), nullptr, EQuitPreference::Quit, false);
 }
+
+void ASwanJameGamState::Reset()
+{
+	m_HiredWorkers = 0;
+	m_bCanTakeAction = false;
+}
